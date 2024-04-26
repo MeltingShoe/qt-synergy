@@ -7,7 +7,7 @@ IFS=
 
 while true
 do
-	read -n 1 key
+	read -s -n 1 key
 	if [ "$key" = "" ]; then
 		echo "Enter sent"
 		tmux send-keys -t $targetclient Enter
@@ -17,7 +17,7 @@ do
 		tmux send-keys -t $targetclient Escape
 
 	else
-		echo "$key sent"
+		printf $key
 		tmux send-keys -t $targetclient $key
 	fi
 done
