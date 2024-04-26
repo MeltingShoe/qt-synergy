@@ -5,7 +5,7 @@ Simple script that allows you to send your keyboard input to a different client.
 atm you can't install this lol it's not a plugin
 but soon you'll be able to put this line into your .tmux.conf to install with TPM
 ```
-set -g @plugin 'meltingshoe/tmux-synergy'
+set -g @plugin 'meltingshoe/qt-synergy'
 ```
 
 ### Usage
