@@ -9,8 +9,9 @@ set -g @plugin 'meltingshoe/qt-synergy'
 ```
 
 ### Usage
-1. Make a session called "sandbox" with 2 windows.
-2. Attach to one of those windows on a different device.
+1. Make a session called "sandbox"
+2. Make another session called "playground"
+2. Attach to one of those sessions on a different device.
 3. Press C-r or C-q to start sending input to the other client.
 4. Press C-c to return input to the main client.
 
