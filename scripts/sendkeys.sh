@@ -1,16 +1,7 @@
 #!/usr/bin/env bash
-thisclient=$(tmux list-clients -F "#{session_id}" -t $(tmux display -p "#{session_id}"))
-clients=""
-for i in $(tmux list-clients -F "#{session_id}")
-do
-	if [[ $i != $thisclient ]]
-	then
-		clients+=$i
-		echo $clients
-	fi
-done
-echo done
-targetclient=$(echo $clients | fzf)
+targetclient='sandbox:'
+
+echo "Connecting to $targetclient"
 # for distinguishing " ", "\t" from "\n"
 IFS=
 
@@ -18,9 +9,15 @@ while true
 do
 	read -n 1 key
 	if [ "$key" = "" ]; then
-	   echo "Enter sent"
-	   tmux send-keys -t $targetclient Enter
+		echo "Enter sent"
+		tmux send-keys -t $targetclient Enter
+
+	elif [ "$key" = $'\e' ]; then
+		echo "Escape sent"
+		tmux send-keys -t $targetclient Escape
+
+	else
+		echo "$key sent"
+		tmux send-keys -t $targetclient $key
 	fi
-	echo "$key sent"
-	tmux send-keys -t $targetclient $key
 done
