@@ -1,5 +1,5 @@
-# tmux-synergy
-Simple script that allows you to send your keyboard input to a different client. I made this so you could use a phone, tablet, or another computer to attac
+# qt-synergy
+Use your phone as a 2nd monitor for tmux! With qt-synergy you can send your keystrokes to a window in a different session, allowing you to use other machines as extra monitors in the terminal. 
 
 ## Installation
 atm you can't install this lol it's not a plugin
@@ -9,5 +9,12 @@ set -g @plugin 'meltingshoe/qt-synergy'
 ```
 
 ### Usage
+1. Make a session called "sandbox" with 2 windows.
+2. Attach to one of those windows on a different device.
+3. Press C-r or C-q to start sending input to the other client.
+4. Press C-c to return input to the main client.
+
+
 Right now this plugin doesn't capture any inputs bound in tmux. So things like changing panes/windows is going to be a bit annoying.
-So I reccommend starting by connecting your second device over ssh to the server and attaching to the session you want(I make a "sandbox" session because who knows how catastrophic it will be when this plugin breaks). Then navigate to the window you'll be working in. Since you're pretty much stuck in this single window I find this is most useful if you connect your phone as a client and use it as a console for building and running projects so I can keep all my files open on my main window.
+
+Since you're pretty much stuck in this single window I find this is most useful if you connect your phone as a client and use it as a console for building and running projects so I can keep all my files open on my main window.
