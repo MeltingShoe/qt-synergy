@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-targetclient='sandbox:'
+targetclient=$1
 
 echo "Connecting to $targetclient"
 # for distinguishing " ", "\t" from "\n"
